@@ -68,12 +68,12 @@ const Help = () => {
       
 
     return (
-        <div>
+        <div id='help'>
             <h2 className='text-2xl font-bold text-center py-20'>আমাদের সেবা সমূহ</h2>
-            <div className='w-11/12 mx-auto grid grid-cols-3 gap-4'>
+            <div className='w-11/12 mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4'>
             {
                 healthData.map((item, index) =>(
-                    <div key={index} className="card bg-white text-black shadow-xl p-5">
+                    <div key={index} className="card shadow-xl p-5">
                     <figure>
                       <img
                         className='rounded-full w-20 h-20 object-cover'
@@ -104,7 +104,7 @@ const Help = () => {
 
         {/* Modal */}
       <dialog id="details_modal" className="modal">
-        <div className="modal-box max-w-2xl bg-white">
+        <div className="modal-box max-w-2xl">
           <form method="dialog">
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
               ✕
@@ -114,20 +114,19 @@ const Help = () => {
             <>
               <h3 className="font-bold text-lg mb-2">Appointment Details</h3>
               <hr />
-              <p className="whitespace-pre-line text-sm text-gray-700 py-2">
+              <p className="whitespace-pre-line text-sm py-2">
                 {selectedItem.description}
               </p>
               <hr />
               <div className='flex gap-4 py-3'>
                 <button className='btn btn-primary'>Book Appoinment Now</button> 
-                <button className='btn bg-white text-black'>Cancel</button>
               </div>
             </>
           )}
         </div>
       </dialog>
       {/* add youtube vedio here */}
-      <div className='py-20'>
+      {/* <div className='py-20'>
       <div className="flex w-11/12 mx-auto gap-[2px]">
   <div className="w-full aspect-video my-1">
     <iframe
@@ -194,7 +193,23 @@ const Help = () => {
     ></iframe>
   </div>
 </div>
+      </div> */}
+      <div className="py-20 w-11/12 mx-auto">
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    {Array.from({ length: 6 }).map((_, index) => (
+      <div key={index} className="w-full aspect-video">
+        <iframe
+          className="w-full h-full rounded-md"
+          src="https://www.youtube.com/embed/pj_bVgANAxg?si=v1NVMDv0fgFbnzke"
+          title={`YouTube video ${index + 1}`}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
       </div>
+    ))}
+  </div>
+</div>
 
         </div>
     );
