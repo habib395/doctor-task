@@ -26,7 +26,7 @@ const Contact = () => {
         {/* Right Column - Contact Form */}
         <form
           onSubmit={onSubmit}
-          className="flex flex-col gap-6 w-full lg:w-1/2 p-8 rounded-xl shadow-lg"
+          className="flex flex-col gap-6 lg:w-1/2 p-2 border rounded-xl w-full"
         >
           <h2 className="text-3xl font-semibold  text-transparent">
             Send a Message
@@ -84,6 +84,15 @@ const Contact = () => {
           </button>
         </form>
       </div>
+    {/* location */}
+    <iframe
+        title="Google Map"
+        className="w-11/12 mx-auto h-full border-0"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3626.549447634856!2d87.89541673948243!3d24.63920905416713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fa43ac086bf31d%3A0x6c9fcf838ca668e0!2sDhulian%20-%20Pakur%20Rd%2C%20India!5e0!3m2!1sen!2sbd!4v1751171540307!5m2!1sen!2sbd"
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
     </div>
   );
 };
